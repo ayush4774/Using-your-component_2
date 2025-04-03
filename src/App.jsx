@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import PostCard from './components/postcard'
 
 function App() {
 
@@ -30,10 +31,12 @@ function App() {
   ];
 
   return (
-    <>
-      
-    </>
-  )
+    <div className="flex flex-wrap gap-6 p-6 bg-gray-100">
+      {initialPosts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
+    </div>
+  );
 }
 
 export default App
